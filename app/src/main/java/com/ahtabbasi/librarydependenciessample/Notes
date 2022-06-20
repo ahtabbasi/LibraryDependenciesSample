@@ -1,0 +1,11 @@
+Options explored:
+
+No DI Framework
+Static SL
+Koin
+
+
+Dynamic Lookup Dictionary
+3rd party DI framework
+Custom DI Framework
+Strategy pattern
