@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.Koin
 import org.koin.core.component.KoinScopeComponent
 import org.koin.core.component.createScope
@@ -26,11 +27,16 @@ class Koin2Fragment : Fragment(), KoinScopeComponent {
     override fun getKoin() = myKoin
     override val scope: Scope by lazy { createScope(this) }
 
+    private val viewModel by lazy {
+        getViewModel<Koin2ViewModel>()
+    }
+
     private val useCase: UseCase by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.v(TAG, useCase.getStatus())
+        Log.v(TAG, viewModel.getHello())
     }
 
     override fun onCreateView(
