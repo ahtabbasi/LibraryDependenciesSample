@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.ahtabbasi.koin3.R
 import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.parameter.parametersOf
 
-class Koin3Fragment : Fragment(), CustomKoinComponent {
+class Koin3Fragment : Fragment(), KoinComponent by CustomKoinComponent(libraryModule) {
 
     private val viewModel by lazy {
         getViewModel<Koin3ViewModel> { parametersOf("param from fragment") }
