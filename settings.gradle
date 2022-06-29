@@ -16,4 +16,5 @@ rootProject.name = "LibraryDependenciesSample"
 include ':app'
 include ':koin1'
 include ':koin2'
+include ':koin3'
 include ':static-sl'
